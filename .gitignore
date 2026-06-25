@@ -1,5 +1,5 @@
 .env
-notebooks/
+**/notebooks/
 
 .venv/
 .vscode/
