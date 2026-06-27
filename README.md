@@ -7,7 +7,7 @@ This repository contains the end-to-end Machine Learning pipeline for predicting
 ## 📌 Roadmap
 
 - [x] **Phase 1:** Data Acquisition
-- [ ] **Phase 2:** Exploratory Data Analysis (EDA)
+- [x] **Phase 2:** Exploratory Data Analysis (EDA)
 - [ ] **Phase 3:** Feature Engineering
 - [ ] **Phase 4:** Model Building
 - [ ] **Phase 5:** Model Evaluation
@@ -20,9 +20,9 @@ This repository contains the end-to-end Machine Learning pipeline for predicting
 - [x] Gather raw data and build the initial dataset.
 
 ### 2. Exploratory Data Analysis (EDA)
-- [ ] **Data Cleaning:** Handle missing values, duplicate records, and anomalies/outliers.
-- [ ] **Multicollinearity Analysis:** Identify and eliminate highly correlated features to prevent model distortion.
-- [ ] **Data Visualization:** Analyze target variable distribution and feature relationships.
+- [x] **Data Cleaning:** Handle missing values, duplicate records, and anomalies/outliers.
+- [x] **Multicollinearity Analysis:** Identify and eliminate highly correlated features to prevent model distortion.
+- [x] **Data Visualization:** Analyze target variable distribution and feature relationships.
 
 ### 3. Feature Engineering & Preprocessing
 - [ ] **Data Transformation:** Perform feature scaling (normalization/standardization).
