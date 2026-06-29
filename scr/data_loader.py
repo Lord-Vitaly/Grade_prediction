@@ -1,7 +1,7 @@
 import pandas as pd
 from pathlib import Path
 
-def load_raw_data(file_name: str) -> pd.DataFrame:
+def load(filename: str) -> pd.DataFrame:
     """Loads raw data from the data/raw directory.
 
     Args:
@@ -16,10 +16,28 @@ def load_raw_data(file_name: str) -> pd.DataFrame:
 
     # 2. Go up to the project root and navigate to data/raw
     project_root = current_file.parent.parent
-    file_path = project_root / "data" / "raw" / file_name
+    file_path = project_root / "data" / "raw" / filename
 
     # 3. Check if the file exists before reading
     if not file_path.exists():
         raise FileNotFoundError(f"There is no file at: {file_path}")
 
     return pd.read_csv(file_path)
+
+def save(dataframe: pd.DataFrame) -> None:
+    """Saves processed dataframe into file.
+
+    Args:
+        dataframe: Name of the dataframe.
+
+    Returns:
+        None.
+    """
+
+    # 1. Get the path to the required directory
+    current_file = Path(__file__).resolve()
+    project_root = current_file.parent.parent
+    file_path = project_root / 'data' / 'processed' / dataframe
+
+    # 2. Save file
+    dataframe.to_csv(fr'{file_path}', encoding='utf-8')
