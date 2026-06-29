@@ -24,11 +24,12 @@ def load(filename: str) -> pd.DataFrame:
 
     return pd.read_csv(file_path)
 
-def save(dataframe: pd.DataFrame) -> None:
+def save(dataframe: pd.DataFrame, filename: str = 'dataframe.csv') -> None:
     """Saves processed dataframe into file.
 
     Args:
-        dataframe: Name of the dataframe.
+        dataframe: Name of the dataframe;
+        filename: Name of file with extension (default - dataframe.csv)
 
     Returns:
         None.
@@ -37,7 +38,7 @@ def save(dataframe: pd.DataFrame) -> None:
     # 1. Get the path to the required directory
     current_file = Path(__file__).resolve()
     project_root = current_file.parent.parent
-    file_path = project_root / 'data' / 'processed' / dataframe
+    file_path = project_root / 'data' / 'processed' / filename
 
     # 2. Save file
-    dataframe.to_csv(fr'{file_path}', encoding='utf-8')
+    dataframe.to_csv(fr'{file_path}', encoding='utf-8', index=False)
