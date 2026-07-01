@@ -1,8 +1,8 @@
 import pandas as pd
 from pathlib import Path
 
-def load(filename: str) -> pd.DataFrame:
-    """Loads raw data from the data/raw directory.
+def load(filename: str, data_type: str = 'processed', directory: str = None) -> pd.DataFrame:
+    """Loads data from the chosen directory.
 
     Args:
         file_name: Name of the file with extension (e.g., 'grades.csv').
@@ -16,7 +16,7 @@ def load(filename: str) -> pd.DataFrame:
 
     # 2. Go up to the project root and navigate to data/raw
     project_root = current_file.parent.parent
-    file_path = project_root / "data" / "raw" / filename
+    file_path = project_root / "data" / data_type / directory / filename
 
     # 3. Check if the file exists before reading
     if not file_path.exists():

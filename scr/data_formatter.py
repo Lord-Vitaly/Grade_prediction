@@ -34,25 +34,22 @@ def split_data(data: pd.DataFrame, test_perc: float, train_perc: float = None, v
         dl.save(valid_df, 'Validation', 'validation')
 
 
-def format_data(filename: str) -> pd.DataFrame:
+def format_data(dataframe: pd.DataFrame) -> pd.DataFrame:
     '''
-    Formats data in csv-file and converts it to pd.Dataframe
+    Formats data in pd.Dataframe
 
     Args:
-        filename: Name of the csv-file.
+        filename: initial pd.Dataframe.
 
     Return:
         Formated pd.Dataframe.
     '''
 
-    # 1. Loading file.
-    df = dl.load(filename)
+    # 1. Converting binary and categorical features to numeral.
+    for col in dataframe.columns:
+        if dataframe[col].nunique() == 2:                          # If it is binary...
+            dataframe[col] = dataframe[col].astype('category').cat.codes  # Converts to categoical -> numeral
 
-    # 2. Converting binary and categorical features to numeral.
-    for col in df.columns:
-        if df[col].nunique() == 2:                          # If it is binary...
-            df[col] = df[col].astype('category').cat.codes  # Converts to categoical -> numeral
+    dataframe = pd.get_dummies(dataframe, drop_first=True, dtype=int)     # Converts categorical to binary
 
-    df = pd.get_dummies(df, drop_first=True, dtype=int)     # Converts categorical to binary
-
-    return df
+    return dataframe
