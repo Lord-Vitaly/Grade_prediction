@@ -8,7 +8,7 @@ This repository contains the end-to-end Machine Learning pipeline for predicting
 
 - [x] **Phase 1:** Data Acquisition
 - [x] **Phase 2:** Exploratory Data Analysis (EDA)
-- [ ] **Phase 3:** Feature Engineering
+- [x] **Phase 3:** Feature Engineering
 - [ ] **Phase 4:** Model Building
 - [ ] **Phase 5:** Model Evaluation
 
@@ -25,9 +25,9 @@ This repository contains the end-to-end Machine Learning pipeline for predicting
 - [x] **Data Visualization:** Analyze target variable distribution and feature relationships.
 
 ### 3. Feature Engineering & Preprocessing
-- [ ] **Data Transformation:** Perform feature scaling (normalization/standardization).
-- [ ] **Categorical Encoding:** Convert text/categorical variables into machine-readable numerical formats (e.g., One-Hot Encoding).
-- [ ] **Feature Selection:** Select the most impactful features for the model.
+- [x] **Data Transformation:** Perform feature scaling (normalization/standardization).
+- [x] **Categorical Encoding:** Convert text/categorical variables into machine-readable numerical formats (e.g., One-Hot Encoding).
+- [x] **Feature Selection:** Select the most impactful features for the model.
 
 ### 4. Model Building
 - [ ] *Implementation in progress... (Coming soon)*
