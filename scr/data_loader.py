@@ -24,21 +24,28 @@ def load(filename: str) -> pd.DataFrame:
 
     return pd.read_csv(file_path)
 
-def save(dataframe: pd.DataFrame, filename: str = 'dataframe.csv') -> None:
+def save(dataframe: pd.DataFrame, set_type: str = None, filename: str = 'dataframe.csv') -> None:
     """Saves processed dataframe into file.
 
     Args:
         dataframe: Name of the dataframe;
+        set_type: Type of the set (Test, Training, Validation). Default: Test.
         filename: Name of file with extension (default - dataframe.csv)
 
     Returns:
         None.
     """
 
+    if set_type not in ['Test', 'Training', 'Validation']:
+        set_type = 'Test'
+
+    if filename[-4:] != '.csv':
+        filename += '.csv'
+
     # 1. Get the path to the required directory
     current_file = Path(__file__).resolve()
     project_root = current_file.parent.parent
-    file_path = project_root / 'data' / 'processed' / filename
+    file_path = project_root / 'data' / 'processed' / set_type / filename
 
     # 2. Save file
     dataframe.to_csv(fr'{file_path}', encoding='utf-8', index=False)
